@@ -52,6 +52,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'lambdatoast/elm.vim'
 Plug 'pbogut/deoplete-elm'
 
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+
 " Initialize plugin system
 call plug#end()
 " Jacob settings
@@ -75,8 +77,8 @@ nnoremap <leader>qq :q<CR>
 
 nnoremap <leader>ss :split<CR>
 
-nnoremap <leader>ts :split <Bar> terminal<CR>
-nnoremap <leader>tt :tabnew <Bar> terminal<CR>
+nnoremap <leader>" :split <Bar> terminal<CR>
+nnoremap <leader>' :tabnew <Bar> terminal<CR>
 
 tnoremap <Esc> <C-\><C-n>
 tnoremap fd <C-\><C-n>
@@ -86,6 +88,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
+nnoremap <leader>w2 :vsplit %<CR>
 
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
@@ -122,16 +130,22 @@ autocmd FileType rust nnoremap <localleader>ct :make test<CR>
 autocmd FileType rust nnoremap <localleader>cC :make clean<CR>
 autocmd FileType rust nnoremap <localleader>cb :make bench<CR>
 
-autocmd FileType rust nnoremap gd <Plug>(rust-def)
-autocmd FileType rust nnoremap gs <Plug>(rust-def-split)
-autocmd FileType rust nnoremap gx <Plug>(rust-def-vertical)
-autocmd FileType rust nnoremap <leader>gd <Plug>(rust-doc)
+"autocmd FileType rust nnoremap gd <Plug>(rust-def)
+"autocmd FileType rust nnoremap gs <Plug>(rust-def-split)
+"autocmd FileType rust nnoremap gx <Plug>(rust-def-vertical)
+"autocmd FileType rust nnoremap <leader>gd <Plug>(rust-doc)
+
+" YouCompleteMe
+let g:ycm_rust_src_path = '/home/jbisnett/rust-mir-plugin/src'
+nnoremap gd :YcmCompleter GoTo<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
+
 
 " Deoplete
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 " Use smartcase.
-let g:deoplete#enable_smart_case = 1
+"let g:deoplete#enable_smart_case = 1
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"

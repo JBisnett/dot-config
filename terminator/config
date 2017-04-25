@@ -3,6 +3,7 @@
   focus = mouse
   scroll_tabbar = True
   sticky = True
+  suppress_multiple_term_dialog = True
   title_transmit_bg_color = "#a40000"
   window_state = fullscreen
 [keybindings]
@@ -91,28 +92,40 @@
       title = jbisnett@jbisnett: ~
       type = Window
     [[[child1]]]
-      active_page = 1
-      labels = None, None
-      last_active_term = 743e87cf-2ca9-4b94-8965-b2bae7652ea2, a4966948-313c-41e9-b275-4d2e58968cea
+      active_page = 2
+      labels = None, None, None, None
+      last_active_term = f55322f1-39f2-4b72-ae30-a78a0c96d011, dec1e6a5-b1d1-4749-97d7-b8c8b4299abc, aacfe49e-f1ee-488d-bbf4-0f0a76417595, fef9e8be-e742-4483-a4dc-6379d69b86be
       order = 0
       parent = child0
       type = Notebook
     [[[terminal2]]]
-      command = vim
-      directory = research/compiler/crate_pass
+      directory = rust-mir-plugin/src
       order = 0
       parent = child1
       profile = default
       type = Terminal
-      uuid = 743e87cf-2ca9-4b94-8965-b2bae7652ea2
+      uuid = f55322f1-39f2-4b72-ae30-a78a0c96d011
     [[[terminal3]]]
-      command = vim
-      directory = research/compiler/mir_utils
+      directory = research/compiler/crate_pass
       order = 1
       parent = child1
       profile = default
       type = Terminal
-      uuid = a4966948-313c-41e9-b275-4d2e58968cea
+      uuid = dec1e6a5-b1d1-4749-97d7-b8c8b4299abc
+    [[[terminal4]]]
+      directory = research/compiler/mir_utils
+      order = 2
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = aacfe49e-f1ee-488d-bbf4-0f0a76417595
+    [[[terminal5]]]
+      directory = research/compiler/crate_pass
+      order = 3
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = fef9e8be-e742-4483-a4dc-6379d69b86be
   [[vim]]
     [[[child0]]]
       fullscreen = True
